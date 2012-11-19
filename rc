@@ -7,11 +7,11 @@ function java-versions() {
 }
 
 function java-use-version() {
-  version=$1
-  if [ "$version" = "system" ]; then
+  export JAVA_VERSION=$1
+  if [ "$JAVA_VERSION" = "system" ]; then
     export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
   else
-    export JAVA_HOME="/Library/Java/JavaVirtualMachines/$version/Contents/Home"
+    export JAVA_HOME="/Library/Java/JavaVirtualMachines/$JAVA_VERSION/Contents/Home"
   fi
 }
 
