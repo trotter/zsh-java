@@ -1,7 +1,7 @@
 export JAVA_VERSIONS_HOME=/Library/Java/JavaVirtualMachines/
 
 function java-versions() {
-  for dir in find $JAVA_VERSIONS_HOME/* -depth 0 -type d; do
+  for dir in $(find $JAVA_VERSIONS_HOME/* -depth 0 -type d); do
     basename $dir
   done
 }
