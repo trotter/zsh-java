@@ -3,7 +3,7 @@ java-versions() {
 }
 
 java-use-version() {
-  export JAVA_HOME="$(/usr/libexec/java_home -v $1)"
+  export JAVA_HOME="$(java-versions 2>&1 | grep $1 | head -1 | cut -f3)"
 }
 
 # sort -r ensures we're likely to get the latest version
